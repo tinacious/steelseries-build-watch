@@ -1,24 +1,24 @@
-const { EVENT } = require("../constants")
+const {
+  EVENT
+} = require("../constants")
 const GameService = require("../services/game.service")
+const { getBuildStatusFromCodeship } = require("./webhook-handlers/codeship")
 
 module.exports = async (req, res) => {
+  const status = getBuildStatusFromCodeship(req.body);
 
-  console.log(req.body)
-
-  const { type } = req.body
-
-  let response;
-  switch (type) {
+  switch (status) {
     case EVENT.BUILD_SUCCESS:
-      response = await GameService.sendSuccessEvent()
+      await GameService.sendSuccessEvent()
       break;
 
     case EVENT.BUILD_FAIL:
-      response = await GameService.sendFailureEvent()
+      await GameService.sendFailureEvent()
       break;
   }
 
-  console.log(response)
-
-  return res.json({ success: true, eventType: type })
+  return res.json({
+    success: true,
+    status
+  })
 }
