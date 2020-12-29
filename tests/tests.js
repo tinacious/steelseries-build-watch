@@ -6,4 +6,4 @@ const Assert = require('assert');
 Assert(true)
 
 // Make CI fail
-Assert(false)
+// Assert(false)
