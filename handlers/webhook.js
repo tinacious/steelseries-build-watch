@@ -4,17 +4,18 @@ const GameService = require("../services/game.service")
 module.exports = async (req, res) => {
   const { type } = req.body
 
-  let eventType;
+  let response;
   switch (type) {
     case EVENT.BUILD_SUCCESS:
-      eventType = await GameService.sendSuccessEvent()
+      response = await GameService.sendSuccessEvent()
       break;
 
     case EVENT.BUILD_FAIL:
-      eventType = await GameService.sendFailureEvent()
+      response = await GameService.sendFailureEvent()
       break;
   }
 
+  console.log(response)
 
-  return res.json({ success: true, eventType })
+  return res.json({ success: true, eventType: type })
 }

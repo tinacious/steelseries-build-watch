@@ -9,5 +9,9 @@ module.exports = {
   APP_ENV: process.env.NODE_ENV || 'development',
   GAMESENSE_ENDPOINT,
   GAME_NAME,
-  EVENT
+  EVENT,
+  FLASH_RATE: {
+    frequency: 10,
+    repeat_limit: 20,
+  }
 }
