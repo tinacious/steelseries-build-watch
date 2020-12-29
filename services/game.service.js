@@ -3,6 +3,7 @@ const {
   GAMESENSE_ENDPOINT,
   GAME_NAME,
   GAME_DISPLAY_NAME,
+  GAME_DEVELOPER,
   EVENT,
   FLASH_RATE
 } = require('../constants');
@@ -14,8 +15,8 @@ const GameService = {
   async registerGame() {
     const payload = {
       "game": GAME_NAME,
-      "game_display_name": ,
-      "developer": "Tinacious Game Studios"
+      "game_display_name": GAME_DISPLAY_NAME,
+      "developer": GAME_DEVELOPER
     };
 
     return await fetch(`${GAMESENSE_ENDPOINT}/game_metadata`, {

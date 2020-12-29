@@ -7,6 +7,7 @@ module.exports = {
   APP_ENV: process.env.NODE_ENV || 'development',
   GAME_NAME: process.env.GAME_NAME,
   GAMESENSE_ENDPOINT: process.env.GAMESENSE_ENDPOINT,
+  GAME_DEVELOPER: process.env.GAME_DEVELOPER,
   GAME_DISPLAY_NAME: process.env.GAME_DISPLAY_NAME,
   EVENT,
   FLASH_RATE: {
