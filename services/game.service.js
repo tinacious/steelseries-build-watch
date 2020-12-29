@@ -185,6 +185,12 @@ const GameService = {
         'Content-Type': 'application/json'
       },
     })
+  },
+
+  init() {
+    GameService.ping()
+    GameService.registerGame()
+    GameService.registerEvents()
   }
 }
 
