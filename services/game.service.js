@@ -40,25 +40,36 @@ const GameService = {
         icon_id: 38,
         value_optional: true,
         handlers: [{
-          'device-type': "keyboard",
-          zone: "function-keys",
-          color: {
-            "gradient": {
-              "zero": {
-                "red": 0,
-                "green": 0,
-                "blue": 0
-              },
-              "hundred": {
-                "red": 0,
-                "green": 255,
-                "blue": 0
+            'device-type': "keyboard",
+            zone: "function-keys",
+            color: {
+              "gradient": {
+                "zero": {
+                  "red": 0,
+                  "green": 0,
+                  "blue": 0
+                },
+                "hundred": {
+                  "red": 0,
+                  "green": 255,
+                  "blue": 0
+                }
               }
-            }
+            },
+            mode: "percent",
+            rate: FLASH_RATE
           },
-          mode: "percent",
-          rate: FLASH_RATE
-        }],
+          {
+            'device-type': 'screened',
+            zone: 'one',
+            mode: 'screen',
+            datas: [{
+              'icon-id': 38,
+              'has-text': true,
+              prefix: 'Build Success!  '
+            }]
+          }
+        ],
       }),
       headers: {
         'Content-Type': 'application/json'
@@ -95,7 +106,18 @@ const GameService = {
           },
           mode: "percent",
           rate: FLASH_RATE
-        }],
+        },
+        {
+          'device-type': 'screened',
+          zone: 'one',
+          mode: 'screen',
+          datas: [{
+            'icon-id': 39,
+            'has-text': true,
+            prefix: 'Build Fail!  '
+          }]
+        }
+      ],
       }),
       headers: {
         'Content-Type': 'application/json'
