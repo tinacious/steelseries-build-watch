@@ -19,11 +19,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(heartbeat);
 
 app.get('/', require('./handlers/index'))
-app.post('/webhook', require('./handlers/webhook'))
+app.post('/codeship-webhook', require('./handlers/codeship-webhook'))
 
 http
   .createServer(app)
   .listen(app.get('port'), () => {
     console.log(`ROOT: http://localhost:${app.get('port')}`);
-    console.log(`Webhook: http://localhost:${app.get('port')}/webhook`);
+    console.log(`Webhook: http://localhost:${app.get('port')}/codeship-webhook`);
   });
