@@ -30,25 +30,6 @@ const GameService = {
    * Register events
    */
   async registerEvents() {
-    // let success = await fetch(`${GAMESENSE_ENDPOINT}/register_game_event`, {
-    //   method: 'post',
-    //   body: JSON.stringify({
-    //     game: GAME_NAME,
-    //     event: EVENT.BUILD_SUCCESS,
-    //     icon_id: 38,
-    //     value_optional: true,
-    //     data: {
-    //       value: 1
-    //     },
-    //   }),
-    //   headers: {
-    //     'Content-Type': 'application/json'
-    //   },
-    // })
-    // if (success) {
-    //   const json = await success.json();
-    //   console.log('Successfully registered BUILD_SUCCESS', JSON.stringify(json, null, 2))
-    // }
     let success = await fetch(`${GAMESENSE_ENDPOINT}/bind_game_event`, {
       method: 'post',
       body: JSON.stringify({
