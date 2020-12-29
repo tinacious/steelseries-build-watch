@@ -114,7 +114,7 @@ const GameService = {
           datas: [{
             'icon-id': 39,
             'has-text': true,
-            prefix: 'Build Fail!  '
+            prefix: 'Build Fail!          '
           }]
         }
       ],
