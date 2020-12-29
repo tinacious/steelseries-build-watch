@@ -130,6 +130,7 @@ It would also be great to have the setting reset itself after a period of time. 
 
 ## Further Reading
 
+- [How I made my keyboard flash red when the build breaks on CI 🚨](https://blog.tinaciousdesign.com/how-i-made-my-keyboard-flash-red-when-the-build-breaks-on-ci) - a blog post I wrote about this experiment
 - [Steelseries Apex 7](https://steelseries.com/gaming-keyboards/apex-7?language=english&switch=blue) - This is the keyboard I got, with blue switches and English layout, but I believe many of their keyboards are supported though I cannot confirm which models exactly.
-- [Steelseries GameSense SDK](https://github.com/SteelSeries/gamesense-sdk)
-- [Codeship CI](https://app.codeship.com/)
+- [Steelseries GameSense SDK](https://github.com/SteelSeries/gamesense-sdk) - official documentation
+- [Codeship CI](https://app.codeship.com/) - the continuous integration service I used which has a generous free plan
