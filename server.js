@@ -4,7 +4,6 @@ if (!process.env.DISABLE_DOT_ENV) {
 
 const express = require('express');
 const http = require('http');
-const heartbeat = require('./middleware/heartbeat');
 const app = express();
 const bodyParser = require('body-parser');
 
@@ -18,8 +17,6 @@ app.set('port', process.env.PORT || 4000);
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-
-app.use(heartbeat);
 
 app.get('/', require('./handlers/index'))
 app.post('/codeship-webhook', require('./handlers/codeship-webhook'))

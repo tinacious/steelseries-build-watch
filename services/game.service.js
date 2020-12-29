@@ -187,11 +187,25 @@ const GameService = {
     })
   },
 
+  /**
+   * Sets up the heartbeat to keep listening
+   */
+  heartbeat() {
+    GameService.ping();
+
+    let count = 0;
+    setInterval(() => {
+      GameService.ping();
+      count++
+      // console.log(count)
+    }, 13000);
+  },
+
   init() {
-    GameService.ping()
+    GameService.heartbeat()
     GameService.registerGame()
     GameService.registerEvents()
-  }
+  },
 }
 
 
