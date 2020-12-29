@@ -4,7 +4,9 @@ const {
 const GameService = require("../services/game.service")
 
 module.exports = async (req, res) => {
-  switch (payload.build.status) {
+  const status = req.body.build.status;
+
+  switch (status) {
     case 'success':
       await GameService.sendSuccessEvent()
       break;

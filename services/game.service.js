@@ -2,6 +2,7 @@ const fetch = require('node-fetch');
 const {
   GAMESENSE_ENDPOINT,
   GAME_NAME,
+  GAME_DISPLAY_NAME,
   EVENT,
   FLASH_RATE
 } = require('../constants');
@@ -13,7 +14,7 @@ const GameService = {
   async registerGame() {
     const payload = {
       "game": GAME_NAME,
-      "game_display_name": "Tinacious Build Watch",
+      "game_display_name": ,
       "developer": "Tinacious Game Studios"
     };
 
@@ -64,7 +65,7 @@ const GameService = {
     })
     if (success) {
       const json = await success.json();
-      console.log('Successfully registered BUILD_SUCCESS', JSON.stringify(json, null, 2))
+      console.log('Successfully registered BUILD_SUCCESS'/* , JSON.stringify(json, null, 2) */)
     }
 
     success = await fetch(`${GAMESENSE_ENDPOINT}/bind_game_event`, {
@@ -101,7 +102,7 @@ const GameService = {
     })
     if (success) {
       const json = await success.json();
-      console.log('Successfully registered BUILD_FAIL', JSON.stringify(json, null, 2))
+      console.log('Successfully registered BUILD_FAIL'/* , JSON.stringify(json, null, 2) */)
     }
   },
 
