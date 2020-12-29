@@ -6,11 +6,15 @@ const express = require('express');
 const http = require('http');
 const heartbeat = require('./middleware/heartbeat');
 const app = express();
+const bodyParser = require('body-parser');
 
 const constants = require('./constants')
 console.log(constants)
 
 app.set('port', process.env.PORT || 4000);
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(heartbeat);
 
