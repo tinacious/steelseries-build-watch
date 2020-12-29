@@ -2,6 +2,9 @@ const { EVENT } = require("../constants")
 const GameService = require("../services/game.service")
 
 module.exports = async (req, res) => {
+
+  console.log(req.body)
+
   const { type } = req.body
 
   let response;
